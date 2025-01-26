@@ -26,7 +26,7 @@ async function checkMet(city){
 
 
          if(data.weather[0].main.toLowerCase() == 'clouds'){
-             weatherIcon.src = 'icon/cloudy-day-1.svg';
+             weatherIcon.src = './icon/cloudy-day-1.svg';
            }
           else if (data.weather[0].main == 'Clear'){          
             weatherIcon.src= './icon/day.svg';
@@ -35,7 +35,7 @@ async function checkMet(city){
              weatherIcon.src = './icon/rainy-6.svg';
         }
             else if (data.weather[0].main.toLowerCase() == 'snowy'){
-             weatherIcon.src= '.icon/snowy-1.svg';
+             weatherIcon.src= './icon/snowy-1.svg';
            }
 
 
@@ -53,10 +53,7 @@ async function checkMet(city){
         
     })
 
-    searchBtn.addEventListener('click', () => {
-      const city = searchBox.value;
-      checkMet(city);
-  });
+  
 
 
     async function checkDays(city){
