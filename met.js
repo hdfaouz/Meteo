@@ -37,6 +37,9 @@ async function checkMet(city){
             else if (data.weather[0].main.toLowerCase() == 'snowy'){
              weatherIcon.src= '.icon/snowy-1.svg';
            }
+
+
+       
            
 
     }
@@ -49,6 +52,11 @@ async function checkMet(city){
         checkDays(searchBox.value);
         
     })
+
+    searchBtn.addEventListener('click', () => {
+      const city = searchBox.value;
+      checkMet(city);
+  });
 
 
     async function checkDays(city){
@@ -78,7 +86,89 @@ async function checkMet(city){
        document.querySelector('#third-day-temp').innerHTML= Math.round(days[2].main.temp)+" °C";
        document.querySelector('#fourth-day-temp').innerHTML= Math.round(days[3].main.temp)+" °C";
        document.querySelector('#fifth-day-temp').innerHTML= Math.round(days[4].main.temp)+" °C";
+
+
+
+
+                if(days[0].weather[0].main == 'Clouds'){
+                  document.getElementById("first-day-icon").src = './icon/cloudy-day-1.svg';
+                }
+              else if (days[0].weather[0].main == 'Clear'){          
+               document.getElementById("first-day-icon").src= './icon/day.svg';
+              }
+              else if (days[0].weather[0].main == 'Rain'){
+               document.getElementById("first-day-icon").src = './icon/rainy-6.svg';
+              }
+              else if (days[0].weather[0].main == 'Snow'){
+               document.getElementById("first-day-icon").src= './icon/snowy-1.svg';
+              }
+              
+      
+              //day2
+
+              if(days[1].weather[0].main == 'Clouds'){
+                document.getElementById("second-day-icon").src = './icon/cloudy-day-1.svg';
+              }
+            else if (days[1].weather[0].main == 'Clear'){          
+             document.getElementById("second-day-icon").src= './icon/day.svg';
+            }
+            else if (days[1].weather[0].main == 'Rain'){
+             document.getElementById("second-day-icon").src = './icon/rainy-6.svg';
+            }
+            else if (days[1].weather[0].main == 'Snow'){
+             document.getElementById("second-day-icon").src= './icon/snowy-1.svg';
+            }
+           
+
+            //day3
+
+            if(days[2].weather[0].main== 'Clouds'){
+              document.getElementById("third-day-icon").src = './icon/cloudy-day-1.svg';
+            }
+          else if (days[2].weather[0].main == 'Clear'){          
+           document.getElementById("third-day-icon").src= './icon/day.svg';
+          }
+          else if (days[2].weather[0].main == 'Rain'){
+           document.getElementById("third-day-icon").src = './icon/rainy-6.svg';
+          }
+          else if (days[2].weather[0].main == 'Snow'){
+           document.getElementById("third-day-icon").src= './icon/snowy-1.svg';
+          }
+          
+
+          //day4
+          if(days[3].weather[0].main == 'Clouds'){
+            document.getElementById("fourth-day-icon").src = '/icon/cloudy-day-1.svg';
+          }
+        else if (days[3].weather[0].main == 'Clear'){          
+         document.getElementById("fourth-day-icon").src= './icon/day.svg';
+        }
+        else if (days[3].weather[0].main == 'Rain'){
+         document.getElementById("fourth-day-icon").src = './icon/rainy-6.svg';
+        }
+        else if (days[3].weather[0].main == 'Snow'){
+         document.getElementById("fourth-day-icon").src= './icon/snowy-1.svg';
+        }
+       
+
+        //day5
+        if(days[4].weather[0].main == 'Clouds'){
+          document.getElementById("fifth-day-icon").src = './icon/cloudy-day-1.svg';
+        }
+      else if (days[4].weather[0].main == 'Clear'){          
+       document.getElementById("fifth-day-icon").src= './icon/day.svg';
+      }
+      else if (days[4].weather[0].main == 'Rain'){
+       document.getElementById("fifth-day-icon").src = './icon/rainy-6.svg';
+      }
+      else if (days[4].weather[0].main == 'Snow'){
+       document.getElementById("fifth-day-icon").src= './icon/snowy-2.svg';
+      }
+      
+          
     }
+
+    
 
 
      
